@@ -1,0 +1,12 @@
+{
+ "package": "Hello_world_farmware",
+ "language": "python",
+ "author": "Erick M. Fiestas Sorogastúa",
+ "description": "Print a message on Farmbot's front-end",
+ "version": "0.0.1",
+ "min_os_version_major": 3,
+ "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/master/manifest.json",
+ "zip": "https://github.com/ErickMFS/farmwares/archive/master.zip",
+ "executable": "python",
+ "args": ["farmwares/Hello_World_Farmware.py"]
+}
