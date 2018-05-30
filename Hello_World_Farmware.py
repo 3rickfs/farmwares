@@ -24,11 +24,10 @@ def print_message(message):
     wrapped_message = {
         "kind": "send_message",
         "args": {
-            "message_type": "alert",
+            "message_type": "error",
             "message": message}}
     post(wrapped_message)
 
 
 if __name__ == "__main__":
     print_message("Hey you I'm greeting you from a python code!")
-
