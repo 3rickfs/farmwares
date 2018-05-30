@@ -31,4 +31,3 @@ def print_message(message):
 
 if __name__ == "__main__":
     print_message("Hey you I'm greeting you from a python code!")
-
