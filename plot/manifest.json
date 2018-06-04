@@ -8,5 +8,5 @@
  "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/master/plot/manifest.json",
  "zip": "https://github.com/ErickMFS/farmwares/archive/master.zip",
  "executable": "python",
- "args": ["farmwares/plot/plot.py"]
+ "args": ["farmwares-master/plot/plot.py"]
 }
