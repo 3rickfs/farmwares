@@ -8,5 +8,5 @@
  "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/master/manifest.json",
  "zip": "https://github.com/ErickMFS/farmwares/archive/master.zip",
  "executable": "python",
- "args": ["farmwares/Hello_World_Farmware.py"]
+ "args": ["farmwares-master/Hello_World_Farmware.py"]
 }
