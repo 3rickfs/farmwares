@@ -1,0 +1,12 @@
+{
+ "package": "Hello_world_farmware",
+ "language": "python",
+ "author": "Erick M. Fiestas Sorogastúa",
+ "description": "To actuate farmbot",
+ "version": "0.0.1",
+ "min_os_version_major": 3,
+ "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/master/farmbots_motion_test/manifest.json",
+ "zip": "https://github.com/ErickMFS/farmwares/archive/master.zip",
+ "executable": "python",
+ "args": ["farmwares-master/farmbots_motion_test/motion_test.py"]
+}
