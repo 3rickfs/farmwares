@@ -8,4 +8,8 @@ if __name__ == "__main__":
     log('Come on, man, just move yourself on', message_type='info', title=FARMWARE_NAME)
     reload(sys)
     sys.setdefaultencoding('utf8')
-    farmware = MyFarmware(FARMWARE_NAME)
+    try:
+        farmware = MyFarmware(FARMWARE_NAME)
+    except Exception as e:
+        log(e, message_type='error', title=FARMWARE_NAME + " : init")
+        raise Exception(e)
