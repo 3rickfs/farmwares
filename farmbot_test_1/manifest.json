@@ -9,5 +9,5 @@
  "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/farmbot_test_1/master/manifest.json",
  "zip": "https://github.com/ErickMFS/farmwares/farmbot_test_1/archive/master.zip",
  "executable": "python",
- "args": ["farmwares-master/farmbot_test_1/Hello_World_Farmware.py"]
+ "args": ["farmwares/farmbot_test_1/Hello_World_Farmware.py"]
 }
