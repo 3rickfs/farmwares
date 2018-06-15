@@ -8,8 +8,8 @@ from CeleryPy import execute_sequence
 class MyFarmware():
 
     def __init__(self,farmwarename):
-        prefix = self.farmwarename.lower().replace('-', '_')
         self.farmwarename = farmwarename
+        prefix = self.farmwarename.lower().replace('-', '_')
         """self.get_input_env()"""
         self.input_default_speed = int(os.environ.get(prefix + "_default_speed", 800))
         self.api = API(self)
