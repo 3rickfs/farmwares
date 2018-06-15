@@ -4,5 +4,5 @@ from CeleryPy import log
 import sys
 
 if __name__ == "__main__":
-    FARMWARE_NAME = ((__file__.split(os.sep))[len(__file__.split(os.sep)) - 3]).replace('-master', '')
-    log(FARMWARE_NAME)
+    FARMWARE_NAME = "Motion_test"
+    log('Come on, man, just move yourself on', message_type='info', title=FARMWARE_NAME)
