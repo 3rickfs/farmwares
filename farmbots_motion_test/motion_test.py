@@ -13,3 +13,9 @@ if __name__ == "__main__":
     except Exception as e:
         log(e, message_type='error', title=FARMWARE_NAME + " : init")
         raise Exception(e)
+    else:
+        try:
+            farmware.run()
+        except Exception as e:
+            log(e ,message_type='error', title=FARMWARE_NAME + " : run" )
+            raise Exception(e)
