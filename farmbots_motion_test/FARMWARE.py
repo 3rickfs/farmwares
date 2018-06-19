@@ -4,6 +4,9 @@ from API import API
 from CeleryPy import log
 from CeleryPy import move_absolute
 from CeleryPy import execute_sequence
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from plant_detection.PlantDetection import PlantDetection
 
 class MyFarmware():
 
@@ -20,6 +23,8 @@ class MyFarmware():
             location=[400,100,0],
             offset=[0,0,0],
             speed=800)   
+        PD = PlantDetection(coordinates=True, app=True)
+        PD.detect_plants()
 
     def run(self):
         self.execute_sequence_init()
