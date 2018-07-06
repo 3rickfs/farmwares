@@ -8,5 +8,5 @@
  "url": "https://raw.githubusercontent.com/ErickMFS/farmwares/master/precision_repeatability_tests_v1/manifest.json",
  "zip": "https://github.com/ErickMFS/farmwares/archive/master.zip",
  "executable": "python",
- "args": ["farmwares-master/precision_repeatability_tests_v1/farmware_process.py"]
+ "args": ["farmwares-master/precision_repeatability_tests_v1/precision_repeatability_test_v1.py"]
 }
