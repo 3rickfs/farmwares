@@ -3,7 +3,7 @@ from API import API
 from CeleryPy import log
 from CeleryPy import move_absolute
 from plant_detection.Image import Image
-#from plant_detection.Parameters import Parameters
+from plant_detection.Parameters import Parameters
 from plant_detection.DB import DB
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
@@ -21,6 +21,7 @@ class MyFarmware():
         self.z_photo_pos = 0
         self.image = None
         self.plant_db = DB()
+        self.params = Parameters()
         self.plant_detection = PlantDetection(coordinates=True, app=True)
 
         """"self.api = API(self)
