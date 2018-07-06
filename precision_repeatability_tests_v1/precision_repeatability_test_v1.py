@@ -1,5 +1,5 @@
 import os
-from FARMWARE import MyFarmware
+from farmware_process import MyFarmware
 from CeleryPy import log
 import sys
 
