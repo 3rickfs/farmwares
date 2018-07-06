@@ -44,7 +44,7 @@ class MyFarmware():
     def take_photo(self):
         self.image = Image(self.params, self.plant_db)
         self.image.capture()
-        self.image.save('Seedling photo_' + strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+        self.image.save('Seedling_photo_' + strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 
     def process_photo(self):
         self.plant_detection.detect_plants()
