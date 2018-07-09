@@ -16,8 +16,8 @@ class MyFarmware():
         self.farmwarename = farmwarename
         prefix = self.farmwarename.lower().replace('-', '_')
         self.input_default_speed = int(os.environ.get(prefix + "_default_speed", 800))
-        self.x_photo_pos = 200
-        self.y_photo_pos = 100
+        self.x_photo_pos = 400
+        self.y_photo_pos = 235
         self.z_photo_pos = 0
         self.image = None
         self.plant_db = DB()
