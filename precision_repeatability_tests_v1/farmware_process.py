@@ -44,12 +44,7 @@ class MyFarmware():
         self.image.save('Seedling_photo_' + strftime("%Y-%m-%d_%H:%M:%S", gmtime()))
 
     def process_photo(self):
-        image_id = ENV.load('PLANT_DETECTION_selected_image', get_json=False)
-        if image_id is None:
-            log('No image selected.',
-                message_type='error', title='historical-plant-detection')
-            sys.exit(0)
-        self.plant_detection = PlantDetection(coordinates=True, app=True, app_image_id=image_id)
+        self.plant_detection = PlantDetection(coordinates=True, app=True)
         self.plant_detection.detect_plants()
     """def graph_plant_centroid(self):
 
@@ -59,3 +54,4 @@ class MyFarmware():
         self.mov_robot_photo()
         self.take_photo()
         self.process_photo()
+        sys.exit(0)
