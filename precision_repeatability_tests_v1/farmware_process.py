@@ -90,6 +90,7 @@ class MyFarmware():
             payload = json.dumps(wrapped_data)
             requests.post(os.environ['FARMWARE_URL'] + 'api/v1/celery_script',
                           data=payload, headers=HEADERS)
+            log('Data is supposed to be saved')
 
         LOCAL_STORE = 'test_data'
         post(wrap(append(timestamp(idata))))
