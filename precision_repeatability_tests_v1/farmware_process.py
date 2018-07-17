@@ -223,7 +223,7 @@ class MyFarmware():
         self.mov_robot_photo()
         #self.take_photo()
         #self.process_photo()
-        for i in range(0, 50, 14):
-            self.save_data(i)
+        #for i in range(0, 50, 14):
+        #    self.save_data(i)
         self.plot_data()
         sys.exit(0)
