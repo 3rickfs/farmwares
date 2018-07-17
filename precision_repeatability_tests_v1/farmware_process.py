@@ -50,10 +50,49 @@ class MyFarmware():
 
     def process_photo(self):
         self.plant_detection = PlantDetection(coordinates=True, app=True)
-        self.plant_detection.detect_plants()
+        self.plant_detection.detect_plan ts()
     """def graph_plant_centroid(self):
 
     def execute_sequence_init(self):"""
+
+    def save_data(self, idata):
+        HEADERS = {
+            'Authorization': 'bearer {}'.format(os.environ['FARMWARE_TOKEN']),
+            'content-type': 'application/json'}
+
+        def timestamp(value):
+            """Add a timestamp to the pin value."""
+            return {'time': time(), 'value': value}
+
+        def append(data):
+            """Add new data to existing data."""
+            try:
+                existing_data = json.loads(os.environ[LOCAL_STORE])
+            except KeyError:
+                existing_data = []
+            existing_data.append(data)
+            return existing_data
+
+        def wrap(data):
+            """Wrap the data in a `set_user_env` Celery Script command to save it."""
+            return {
+                'kind': 'set_user_env',
+                'args': {},
+                'body': [{
+                    'kind': 'pair',
+                    'args': {
+                        'label': LOCAL_STORE,
+                        'value': json.dumps(data)
+                    }}]}
+
+        def post(wrapped_data):
+            """Send the Celery Script command."""
+            payload = json.dumps(wrapped_data)
+            requests.post(os.environ['FARMWARE_URL'] + 'api/v1/celery_script',
+                          data=payload, headers=HEADERS)
+
+        LOCAL_STORE = 'test_data'
+        post(wrap(append(timestamp(idata))))
 
     def plot_data(self):
         TIME_SCALE_FACTOR = 60 * 2
@@ -184,5 +223,7 @@ class MyFarmware():
         self.mov_robot_photo()
         #self.take_photo()
         #self.process_photo()
+        for i in range(0, 50, 14):
+            self.save_data(i)
         self.plot_data()
         sys.exit(0)
