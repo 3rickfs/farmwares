@@ -50,7 +50,7 @@ class MyFarmware():
 
     def process_photo(self):
         self.plant_detection = PlantDetection(coordinates=True, app=True)
-        self.plant_detection.detect_plan ts()
+        self.plant_detection.detect_plan()
     """def graph_plant_centroid(self):
 
     def execute_sequence_init(self):"""
@@ -223,7 +223,7 @@ class MyFarmware():
         self.mov_robot_photo()
         #self.take_photo()
         #self.process_photo()
-        #for i in range(0, 50, 14):
-        #    self.save_data(i)
+        for i in range(0, 50, 14):
+            self.save_data(i)
         self.plot_data()
         sys.exit(0)
