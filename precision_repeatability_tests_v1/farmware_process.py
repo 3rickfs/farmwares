@@ -181,12 +181,12 @@ class MyFarmware():
                                 label['position'], 0, 0.5, 0, 1)
 
             # Add sensor range text
-            range_labels = [{'text': 'off', 'position': (500, 25)},
+            """range_labels = [{'text': 'off', 'position': (500, 25)},
                             {'text': 'wet', 'position': (425, 25)},
                             {'text': 'dry', 'position': (160, 25)},
                             {'text': 'n/a', 'position': (75, 25)}]
 
-            _add_labels(border, range_labels)
+            _add_labels(border, range_labels)"""
             # Flip labels to display vertically
             full = cv2.flip(cv2.transpose(border), 0)
             # Add sensor value labels
@@ -224,7 +224,7 @@ class MyFarmware():
         self.mov_robot_photo()
         #self.take_photo()
         #self.process_photo()
-        for i in range(0, 50, 14):
+        for i in range(0, 500, 21):
             self.save_data(i)
         self.plot_data()
         sys.exit(0)
