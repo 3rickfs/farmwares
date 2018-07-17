@@ -211,6 +211,7 @@ class MyFarmware():
         def save(image):
             """Save the plot image."""
             filename = '/test_data_plot_{}.png'.format(int(time()))
+            log('Image to be saved in: ' + os.environ['IMAGES_DIR'] + filename)
             cv2.imwrite(os.environ['IMAGES_DIR'] + filename, image)
 
         """PIN = get_env('pin')
