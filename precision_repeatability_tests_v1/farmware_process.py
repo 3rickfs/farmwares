@@ -14,7 +14,7 @@ import json
 import requests
 import numpy as np
 import cv2
-
+import csv
 
 class MyFarmware():
     def __init__(self, farmwarename):
@@ -90,10 +90,17 @@ class MyFarmware():
             payload = json.dumps(wrapped_data)
             requests.post(os.environ['FARMWARE_URL'] + 'api/v1/celery_script',
                           data=payload, headers=HEADERS)
-            log('Data is supposed to be saved')
+            """log('Data is supposed to be saved')"""
 
+        def save_data_csv(value):
+            """To save data into a csv file"""
+            with open('db_plant_radius_test.csv', mode='w') as dbprt:
+                db_writer = csv.writer(dbprt, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                db_writer.writerow([time(), value])
+            log('Data is supposed to have been saved into db_plant_radius_test.csv')
+            
         LOCAL_STORE = 'test_data'
-        post(wrap(append(timestamp(idata))))
+        post(wrap(append(timestamp(save_data_csv(idata)))))
 
     def plot_data(self):
         TIME_SCALE_FACTOR = 60 * 2
@@ -217,8 +224,6 @@ class MyFarmware():
         """PIN = get_env('pin')
         IS_SOIL_SENSOR = PIN == 59"""
         save(plot(reduce_data(get_data())))
-
-    #def save_data(self):
 
     def run(self):
         self.mov_robot_origin()
