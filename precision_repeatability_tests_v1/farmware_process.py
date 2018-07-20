@@ -94,11 +94,11 @@ class MyFarmware():
 
         def save_data_csv(value):
             """To save data into a csv file"""
-            with open('db_plant_radius_test.csv', mode='w') as dbprt:
+            with open(os.environ['IMAGES_DIR'] + 'db_plant_radius_test.csv', mode='w') as dbprt:
                 db_writer = csv.writer(dbprt, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 db_writer.writerow([time(), value])
             log('Data is supposed to have been saved into db_plant_radius_test.csv')
-            
+
         LOCAL_STORE = 'test_data'
         post(wrap(append(timestamp(save_data_csv(idata)))))
 
