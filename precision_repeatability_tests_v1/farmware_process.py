@@ -98,15 +98,15 @@ class MyFarmware():
 
         def save_data_csv(value):
             """To save data into a csv file"""
-            with open(self.dir + 'db_plant_radius_test.csv', mode='w') as dbprt:
+            with open('/tmp/' + 'db_plant_radius_test.csv', mode='w') as dbprt:
                 db_writer = csv.writer(dbprt, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 db_writer.writerow([time(), value])
             log('Data is supposed to have been saved into db_plant_radius_test.csv')
 
         LOCAL_STORE = 'test_data'
-        """post(wrap(append(timestamp(save_data_csv(idata)))))"""
-        post(wrap(append(timestamp(idata))))
-            
+        post(wrap(append(timestamp(save_data_csv(idata)))))
+        """post(wrap(append(timestamp(idata))))"""
+
     def plot_data(self):
         TIME_SCALE_FACTOR = 60 * 2
         DATA_SCALE_FACTOR = 2
@@ -224,7 +224,7 @@ class MyFarmware():
             """Save the plot image."""
             filename = '/test_data_plot_{}.png'.format(int(time()))
             log('Image to be saved in: ' + os.environ['IMAGES_DIR'] + filename)
-            cv2.imwrite(self.dir + filename, image)
+            cv2.imwrite('/tmp/' + filename, image)
 
         """PIN = get_env('pin')
         IS_SOIL_SENSOR = PIN == 59"""
