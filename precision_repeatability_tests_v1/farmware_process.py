@@ -104,8 +104,9 @@ class MyFarmware():
             log('Data is supposed to have been saved into db_plant_radius_test.csv')
 
         LOCAL_STORE = 'test_data'
-        post(wrap(append(timestamp(save_data_csv(idata)))))
-
+        """post(wrap(append(timestamp(save_data_csv(idata)))))"""
+        post(wrap(append(timestamp(idata))))
+            
     def plot_data(self):
         TIME_SCALE_FACTOR = 60 * 2
         DATA_SCALE_FACTOR = 2
